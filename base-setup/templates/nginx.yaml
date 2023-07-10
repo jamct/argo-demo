@@ -6,7 +6,7 @@ metadata:
   labels:
     app: my-nginx
 spec:
-  replicas: 3
+  replicas: {{.Values.replicaCount}}
   strategy:
     type: RollingUpdate
     rollingUpdate:
