@@ -1,0 +1,6 @@
+replicaCount: 1
+
+argoService: demo
+
+traefik:
+  enabled: true
