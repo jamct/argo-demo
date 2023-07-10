@@ -13,7 +13,7 @@ spec:
       values: |
         traefik: 
           enabled: true
-        replicaCount: 3
+        replicaCount: 20
   destination:
     name: in-cluster
     namespace: default
