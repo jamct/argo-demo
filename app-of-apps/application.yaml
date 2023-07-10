@@ -1,1 +1,23 @@
-
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: base-setup
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/jamct/argo-demo
+    path: base-setup
+    helm:
+      releaseName: demo
+      values: |
+        traefik: 
+          enabled: true
+        replicaCount: 1
+  destination:
+    name: in-cluster
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
